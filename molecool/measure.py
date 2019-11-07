@@ -5,10 +5,7 @@ Analyzing and Visualizing Molecules (MOLSSI)
 Handles the primary functions
 """
     
-import os
 import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 def calculate_distance(rA, rB):
     # This function calculates the distance between two points given as numpy arrays.

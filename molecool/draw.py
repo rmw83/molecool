@@ -5,10 +5,11 @@ Analyzing and Visualizing Molecules (MOLSSI)
 Handles the primary functions
 """
     
-import os
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+
+from .data import colors
 
 def draw_molecule(coordinates, symbols, draw_bonds=None, save_location=None, dpi=300):
     
