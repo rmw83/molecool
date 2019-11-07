@@ -8,6 +8,25 @@ Handles the primary functions
 import numpy as np
 
 def open_pdb(file_location):
+    
+    """
+    Opens PDB File.
+    
+    Parameters
+    __________
+    
+    file_location : str
+        The Location for the PDB File.
+    
+    Returns
+    _______
+    
+    symbols : list
+        Gives Atomic Symbols for Atoms from PDB File.
+    coordinates: np.ndarray
+        Gives Atomic Coordinates for the PDB File.
+    """
+    
     # Reads PDB File and Returns Coordinates + Atom Names.
     with open(file_location) as pdb_file:
         pdb_data = pdb_file.readlines()
