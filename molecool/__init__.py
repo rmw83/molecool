@@ -5,8 +5,12 @@ Analyzing and Visualizing Molecules (MOLSSI)
 
 # From Functions.py Import Everything
 # Necessary for Allowing Functions from Python Script
-# import molecool.functions.canvas() Imports Canvas() Function Only
+# Import molecool.functions.canvas() Imports Canvas() Function Only
 # Best Practice Tip: from molecool import canvas()
+
+# If Starting from Starting Material...
+# cookiecutter gh:molssi/cookiecutter-cms 
+# pip install -e . 
 
 from .measure import calculate_distance, calculate_angle
 from .bonds import build_bond_list

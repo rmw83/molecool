@@ -7,11 +7,35 @@ Handles the primary functions
     
 import numpy as np
 
-def calculate_distance(rA, rB):
-    # This function calculates the distance between two points given as numpy arrays.
-    d=(rA-rB)
-    dist=np.linalg.norm(d)
-    return dist
+def calculate_distance(Atom_A, Atom_B):
+  
+    """
+    Distance Between Two Atoms.
+    
+    Parameters
+    __________
+    
+    Atom_A, Atom_B : np.ndarray
+        The Coordinates for Atom_A and Atom_B.
+    
+    Returns
+    _______
+    
+    distance : float
+        The Distance from Atom_A to Atom_B.
+    
+    Examples
+    ________
+    
+    >>> r1 = np.array([0.0, 0.0, 0.0])
+    >>> r2 = np.array([1.0, 0.0, 0.0])
+    >>> calculate_distance(r1, r2)
+    1.0
+    """
+
+    difference = (Atom_A - Atom_B)
+    distance = np.linalg.norm(difference)
+    return distance
     
 def calculate_angle(rA, rB, rC, degrees=False):
     # Calculate the angle between three points. Answer is given in radians by default, but can be given in degrees

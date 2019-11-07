@@ -4,22 +4,26 @@ Analyzing and Visualizing Molecules (MOLSSI)
 
 Handles the primary functions
 """
-    
-import os
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
-def open_pdb(f_loc):
-    # This function reads in a pdb file and returns the atom names and coordinates.
-    with open(f_loc) as f:
-        data = f.readlines()
-    c = []
-    sym = []
-    for l in data:
-        if 'ATOM' in l[0:6] or 'HETATM' in l[0:6]:
-            sym.append(l[76:79].strip())
-            c2 = [float(x) for x in l[30:55].split()]
-            c.append(c2)
-    coords = np.array(c)
-    return sym, coords
+import numpy as np
+
+def open_pdb(file_location):
+    # Reads PDB File and Returns Coordinates + Atom Names.
+    with open(file_location) as pdb_file:
+        pdb_data = pdb_file.readlines()
+    pdb_file.close()
+    
+    # Generate Coordinates and Symbols Lists
+    coordinates = []
+    symbols = []
+    
+    # Cycle PDB_DATA 
+    for line in pdb_data:
+        if 'ATOM' in line[0:6] or 'HETATM' in line[0:6]:
+            symbols.append(line[76:79].strip())
+            atom_coordinates = [float(x) for x in line[30:55].split()]
+            coordinates.append(atom_coordinates)
+    coordinates = np.array(coordinates)
+    
+    # End of Script
+    return symbols, coordinates
