@@ -9,6 +9,8 @@ Analyzing and Visualizing Molecules (MOLSSI)
 Under Development...
 Install via Pip in Repository: "pip install -e ."
 
+"TEST"
+
 ### Copyright
 
 Copyright (c) 2019, Ryan Wheat
